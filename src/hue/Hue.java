@@ -1,4 +1,4 @@
-package src.sample.hue;
+package src.hue;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -9,7 +9,7 @@ import java.net.URL;
 
 import com.google.gson.Gson;
 
-import src.sample.hue.state.State;
+import src.hue.state.State;
 
 /**
  * Hueに値を送信するためのクラス。自分のプログラムで使うときはこのクラスのみ利用すれば良い。
@@ -50,6 +50,12 @@ public class Hue {
 	private State state;	// コマンドクラス
 	private Gson gson = new Gson();	// コマンドクラスをJSONにして書き出し
 
+	// 固定値で初期化
+	public Hue(){
+		this.address = "392.168.1.27";
+		this.username = "username";
+		this.num = "1";
+	}
 
 	/**
 	 * コンストラクタでHueの初期設定を行なう。

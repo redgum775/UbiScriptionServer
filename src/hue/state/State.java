@@ -1,4 +1,4 @@
-package src.sample.hue.state;
+package src.hue.state;
 
 //import java.util.List;
 

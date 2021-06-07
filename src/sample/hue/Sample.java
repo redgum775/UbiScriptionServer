@@ -18,6 +18,7 @@ public class Sample {
 		hue.setBri(1);
 
 		// 3: 値の送信
-		hue.sendData();
+		//hue.sendData();
+		hue.showJson();
 	}
 }
