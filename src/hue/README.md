@@ -34,3 +34,7 @@ http://<ip address>/debug/clip.html
 ```
 
 この流れで得た`<ip address>`及び`<user name>`を使用する．
+
+POSTしたのにusernameが得られないときは，ブリッジのPHILIPSボタンを押して，もう一度POSTすること．
+
+IPアドレス及びusernameは`src/hue/Hue.java`の55行目から56行目で設定する．
