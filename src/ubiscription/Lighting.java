@@ -5,6 +5,7 @@ public class Lighting{
   private String cmd_type = null;           // ライトに対する操作
   private Integer light_id = null;          // ライトのid
   private String light_color = null;        // ライトの色
+  private Integer light_color_value = null; // ライトの色を数値で
   private Integer light_brightness = null;  // ライトの明るさ
 
   public Lighting(String cmd_type){
@@ -22,6 +23,7 @@ public class Lighting{
                       + "cmd_type: " + cmd_type + "\n"
                       + "light_id: " + light_id + "\n"
                       + "light_color: " + light_color + "\n"
+                      + "light_color_value: " + light_color_value + "\n"
                       + "light_brightness: " + light_brightness);
   }
 
@@ -56,6 +58,14 @@ public class Lighting{
 
   public void setLightColor(String light_color) {
     this.light_color = light_color;
+  }
+
+  public Integer getLightColorValue() {
+    return light_color_value;
+  }
+
+  public void setLightColorValue(Integer light_color_value) {
+    this.light_color_value = light_color_value;
   }
 
   public int getLightBrightness() {

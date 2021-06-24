@@ -53,12 +53,24 @@ public class Command{
         Hue hue = new Hue();
         hue.newState();
         if(cmd.getLighting().getLightColor().equals("あか")){
-          hue.setHue(100);  // 色を指定
+          hue.setOn(true);
+          hue.setHue(0);    // 色を指定
+          hue.setBri(128);  // 明るさ
+          hue.setSat(255);  // 色の濃さ
         }else if(cmd.getLighting().getLightColor().equals("あお")){
-          hue.setHue(200);  // 色を指定
+          hue.setOn(true);
+          hue.setHue(45000);  // 色を指定
+          hue.setBri(128);  // 明るさ
+          hue.setSat(255);  // 色の濃さ
         }
         hue.sendData();
-      }
+      }else if(cmd.getLighting().getCmdType().equals("color_value")){
+        Hue hue = new Hue();
+        hue.newState();
+        hue.setOn(true);
+        hue.setHue(cmd.getLighting().getLightColorValue());  // 色を指定
+        hue.sendData();
+      }  
     }
     // コマンドのターゲットが…
     if(cmd.getTarget().equals("landmarks")){
