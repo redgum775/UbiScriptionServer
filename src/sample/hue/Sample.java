@@ -2,7 +2,7 @@ package src.sample.hue;
 
 public class Sample {
 	static String address = "192.168.1.27";
-	static String username = "bdgiXxlcWWgUr2go9YhQzc8JIXJMGt3saEAJB9Kq";
+	static String username = "Jctb6BetGIAuwJtBqyYLFbJC5GgcnGj7xok1rcbK";
 
 
 	public static void main(String[] args){
@@ -18,7 +18,7 @@ public class Sample {
 		hue.setBri(1);
 
 		// 3: 値の送信
-		//hue.sendData();
+		hue.sendData();
 		hue.showJson();
 	}
 }
