@@ -1,4 +1,4 @@
-package src.ubiscription;
+package src.json;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -7,7 +7,7 @@ import src.hue.Hue;
 
 public class Command{
   private String target = null;       // コマンド操作のターゲット
-  private Lighting lighting = null;   // ライト
+  private Light lighting = null;   // ライト
 
   public Command(){
   }
@@ -88,7 +88,8 @@ public class Command{
       }  
     }
     // コマンドのターゲットが…
-    if(cmd.getTarget().equals("landmarks")){
+    if(cmd.getTarget().equals("speaker")){
+
     }
   }
 
@@ -96,7 +97,7 @@ public class Command{
     return this.target;
   }
 
-  public Lighting getLighting(){
+  public Light getLighting(){
     return this.lighting;
   }
 }

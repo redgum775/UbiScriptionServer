@@ -1,6 +1,6 @@
-package src.ubiscription;
+package src.json;
 
-public class Lighting{
+public class Light{
   private String target = "light";          // 操作機器
   private String cmd_type = null;           // ライトに対する操作
   private Integer light_id = null;          // ライトのid
@@ -8,11 +8,11 @@ public class Lighting{
   private Integer light_color_value = null; // ライトの色を数値で
   private Integer light_brightness = null;  // ライトの明るさ
 
-  public Lighting(String cmd_type){
+  public Light(String cmd_type){
     this.cmd_type = cmd_type;
   }
 
-  public Lighting(String cmd_type, String light_color, int light_brightness){
+  public Light(String cmd_type, String light_color, int light_brightness){
     this.cmd_type = cmd_type;
     this.light_color = light_color;
     this.light_brightness = light_brightness;

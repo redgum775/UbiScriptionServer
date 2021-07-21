@@ -52,8 +52,7 @@ public class Hue {
 	 */
 	private String num;
 
-	private State state;	// コマンドクラス
-	private Gson gson = new Gson();	// コマンドクラスをJSONにして書き出し
+	private State state;	// Hueの状態
 
 	// 固定値で初期化
 	public Hue(){
@@ -98,6 +97,7 @@ public class Hue {
 
 			PrintWriter pw = new PrintWriter(new OutputStreamWriter(con.getOutputStream()));
 
+			Gson gson = new Gson();	// コマンドクラスをJSONにして書き出し
 			String cmd_json = gson.toJson(state);
 			//System.out.println(json.toString());
 			System.out.println(cmd_json);
@@ -115,6 +115,7 @@ public class Hue {
 	}
 
 	public void showJson(){
+		Gson gson = new Gson();	// コマンドクラスをJSONにして書き出し
 		String cmd_json = gson.toJson(state);
 		System.out.println(cmd_json);
 	}
