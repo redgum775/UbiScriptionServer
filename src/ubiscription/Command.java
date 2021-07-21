@@ -62,13 +62,28 @@ public class Command{
           hue.setHue(45000);  // 色を指定
           hue.setBri(128);  // 明るさ
           hue.setSat(255);  // 色の濃さ
+        }else if(cmd.getLighting().getLightColor().equals("きい")){
+          hue.setOn(true);
+          hue.setHue(16000);  // 色を指定
+          hue.setBri(128);  // 明るさ
+          hue.setSat(255);  // 色の濃さ
+        }else if(cmd.getLighting().getLightColor().equals("みど")){
+          hue.setOn(true);
+          hue.setHue(28000);  // 色を指定
+          hue.setBri(128);  // 明るさ
+          hue.setSat(255);  // 色の濃さ
+        }else if(cmd.getLighting().getLightColor().equals("しろ")){
+          hue.setOn(true);
+          hue.setHue(33000);  // 色を指定
+          hue.setBri(128);  // 明るさ
+          hue.setSat(255);  // 色の濃さ
         }
         hue.sendData();
       }else if(cmd.getLighting().getCmdType().equals("color_value")){
         Hue hue = new Hue();
         hue.newState();
         hue.setOn(true);
-        hue.setHue(cmd.getLighting().getLightColorValue());  // 色を指定
+        hue.setHue(hue.getHue(cmd.getLighting().getLightColorValue()));  // 色を指定
         hue.sendData();
       }  
     }

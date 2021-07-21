@@ -23,6 +23,11 @@ public class Hue {
 	static final int MAX_HUE = 65535;
 
 	/**
+	 * Hueの色相を5段階に区切る
+	 */
+	static final int HUE_LIST[] = {0,16000,28000,33000,45000,50000};
+
+	/**
 	 * Sat(彩度)値の範囲 0~255
 	 */
 	static final int MAX_SAT = 255;
@@ -126,6 +131,14 @@ public class Hue {
 // 色相をセットする
 	public void setHue(int hue) {
 		state.setHue(hue);
+	}
+
+	public int getHue(int idx){
+		if(0 <= idx && idx < 6) {
+			return HUE_LIST[idx];
+		}else{
+			return 0;
+		}
 	}
 
 // 彩度をセットする
