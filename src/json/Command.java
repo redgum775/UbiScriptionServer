@@ -4,10 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
 import src.hue.Hue;
+import src.speaker.Speaker;
 
 public class Command{
   private String target = null;       // コマンド操作のターゲット
   private Light lighting = null;   // ライト
+  private Voice voice = null;
 
   public Command(){
   }
@@ -88,8 +90,15 @@ public class Command{
       }  
     }
     // コマンドのターゲットが…
-    if(cmd.getTarget().equals("speaker")){
-
+    if(cmd.getTarget().equals("voice")){
+      voice = cmd.getVoice();
+      if(voice.getCmdType().equals("play")){
+        Speaker speaker = new Speaker();
+        speaker.setPlayText(voice.getText());
+        speaker.connection();
+        speaker.sendData();
+        speaker.disconnection();
+      }
     }
   }
 
@@ -99,5 +108,9 @@ public class Command{
 
   public Light getLighting(){
     return this.lighting;
+  }
+
+  public Voice getVoice(){
+    return this.voice;
   }
 }
