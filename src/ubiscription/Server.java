@@ -66,34 +66,31 @@ public class Server {
 
     public void run(){
       int idx=0;
-        try{
-          //socketからのデータはInputStreamReaderに送り、さらに
-          //BufferedReaderによってバッファリングする。
-          BufferedReader reader = new BufferedReader(new InputStreamReader(soc.getInputStream()));
-          //Clientへの出力用PrintWriter
-          PrintWriter sendout = new PrintWriter(soc.getOutputStream(), true);
-          while(true){
-            if((line = reader.readLine()) != null){
-            	//データ読み取りと表示。
-            	System.out.println("[" + idx + "]" + line);
-              // json 形式だったら解析
-              if(cmd.isJson(line)){
-                cmd.readCommand(line);
-              }
-            	//Clientにメッセージ送信
-            	sendout.println("Message is received.");
-            }else{
-            	System.out.println("[" + idx + "] no message");
-            }
-            idx++;
+      try{
+        //socketからのデータはInputStreamReaderに送り、さらに
+        //BufferedReaderによってバッファリングする。
+        BufferedReader reader = new BufferedReader(new InputStreamReader(soc.getInputStream()));
+        //Clientへの出力用PrintWriter
+        PrintWriter sendout = new PrintWriter(soc.getOutputStream(), true);
+        while((line = reader.readLine()) != null){
+          //データ読み取りと表示。
+          System.out.println("Received: [" + idx + "]" + line);
+          // json 形式だったら解析
+          if(cmd.isJson(line)){
+            cmd.readCommand(line);
           }
+          //Clientにメッセージ送信
+          sendout.println("Message is received.");
+          idx++;
         }
-        catch(IOException ioex){
-          ioex.printStackTrace();
-        }
+      }
+      catch(IOException ioex){
+        ioex.printStackTrace();
+      }
       finally{
         try{
           if(soc != null){
+            System.out.println("Disconnect from: " + soc.getInetAddress());
             soc.close();
           }
         }
