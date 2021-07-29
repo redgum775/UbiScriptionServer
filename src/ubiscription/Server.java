@@ -61,7 +61,7 @@ public class Server {
     private String line;
     public SrvThread(Socket sct){
       soc=sct;
-      System.out.println("Thread is Generated.  Connect to " + soc.getInetAddress());
+      System.out.println("Thread is Generated.  Connect to " + soc.getInetAddress() + ":" + soc.getPort());
     }
 
     public void run(){
@@ -74,7 +74,7 @@ public class Server {
         PrintWriter sendout = new PrintWriter(soc.getOutputStream(), true);
         while((line = reader.readLine()) != null){
           //データ読み取りと表示。
-          System.out.println("Received: [" + idx + "]" + line);
+          System.out.println("Received: " + line + "\n  from: " + soc.getInetAddress() + ":" + soc.getPort());
           // json 形式だったら解析
           if(cmd.isJson(line)){
             cmd.readCommand(line);
@@ -90,7 +90,7 @@ public class Server {
       finally{
         try{
           if(soc != null){
-            System.out.println("Disconnect from: " + soc.getInetAddress());
+            System.out.println("Disconnect from: " + soc.getInetAddress() + ":" + soc.getPort());
             soc.close();
           }
         }
