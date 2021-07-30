@@ -95,9 +95,15 @@ public class Command{
       if(voice.getCmdType().equals("play")){
         Speaker speaker = new Speaker();
         speaker.setPlayText(voice.getText());
-        speaker.connection();
-        speaker.sendData();
-        speaker.disconnection();
+        (new Thread(){
+          @Override
+          public void run(){
+            speaker.connection();
+            speaker.sendData();
+            speaker.disconnection();
+          }
+        }).start();
+
       }
     }
   }
