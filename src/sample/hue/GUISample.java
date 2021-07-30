@@ -18,7 +18,7 @@ public class GUISample {
 	public static final int HUE_NUM = 3;
 
 	// IPアドレス
-	private static final String address = "192.168.1.27";
+	private static final String address = "192.168.1.26";
 	private static final String username = "bdgiXxlcWWgUr2go9YhQzc8JIXJMGt3saEAJB9Kq";
 
 	public static final int OFFSET = 10;
