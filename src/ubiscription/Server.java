@@ -65,7 +65,6 @@ public class Server {
     }
 
     public void run(){
-      int idx=0;
       try{
         //socketからのデータはInputStreamReaderに送り、さらに
         //BufferedReaderによってバッファリングする。
@@ -81,7 +80,6 @@ public class Server {
           }
           //Clientにメッセージ送信
           sendout.println("Message is received.");
-          idx++;
         }
       }
       catch(IOException ioex){

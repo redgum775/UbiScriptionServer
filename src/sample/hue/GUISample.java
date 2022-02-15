@@ -15,11 +15,11 @@ import javax.swing.event.ChangeListener;
 
 public class GUISample {
 	// Hueの数
-	public static final int HUE_NUM = 3;
+	public static final int HUE_NUM = 4;
 
 	// IPアドレス
 	private static final String address = "192.168.1.26";
-	private static final String username = "bdgiXxlcWWgUr2go9YhQzc8JIXJMGt3saEAJB9Kq";
+	private static final String username = "xG6meBqe7LdM0YCcxnajZKmCB7qakREPNkAbuTms";
 
 	public static final int OFFSET = 10;
 	public static final int PANEL_WIDTH = 200;
@@ -35,7 +35,7 @@ public class GUISample {
 		frame.setLayout(null);
 		frame.setBounds(10, 10, MAIN_WIDTH, MAIN_HEIGHT);
 
-		for(int n = 0; n < 3; n++){
+		for(int n = 0; n < HUE_NUM; n++){
 			ConfigPanel cp = new ConfigPanel();
 			cp.setLayout(null);
 

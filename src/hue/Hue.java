@@ -57,8 +57,9 @@ public class Hue {
 	// 固定値で初期化
 	public Hue(){
 		this.address = "192.168.1.26";
-		this.username = "oICsN-6Gbm00aoJ4SfBJ3pfFfZVge6smDpv-ihEm";
-		this.num = "1";
+		// this.username = "oICsN-6Gbm00aoJ4SfBJ3pfFfZVge6smDpv-ihEm";
+		this.username= "xG6meBqe7LdM0YCcxnajZKmCB7qakREPNkAbuTms";
+		this.num = "4";
 	}
 
 	/**
